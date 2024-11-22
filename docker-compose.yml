@@ -32,16 +32,18 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ACCESS_KEY}
       MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY}
-    command: server /data
+    command: server /data --console-address :9001
     ports:
-      - "9000:9000"
+      - "9000:9000"  # API port
+      - "9001:9001"  # WebUI port
     volumes:
       - minio_data:/data
 
   backend:
     build:
-      context: .
-      dockerfile: server/Dockerfile
+      #context: .
+      #dockerfile: server/Dockerfile
+      image: getmaxun/maxun-backend:latest
     ports:
       - "8080:8080"
     env_file: .env
@@ -67,8 +69,9 @@ services:
 
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile
+      #context: .
+      #dockerfile: Dockerfile
+      image: getmaxun/maxun-frontend:latest
     ports:
       - "5173:5173"
     env_file: .env

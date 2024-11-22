@@ -28,7 +28,8 @@ a {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+  color: #ff00c3;
 }
 
 #browser-actions {
@@ -51,9 +52,6 @@ code {
   flex-direction: column;
   transform: scale(1); /* Ensure no scaling */
   transform-origin: top left; /* Keep the position fixed */
-}
-
-#browser {
 }
 
 #browser-window {

@@ -3,7 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { Paper, Button } from "@mui/material";
-import { AutoAwesome, FormatListBulleted, VpnKey, Usb, Article, Link, CloudQueue } from "@mui/icons-material";
+import { AutoAwesome, FormatListBulleted, VpnKey, Usb, CloudQueue, Code } from "@mui/icons-material";
 import { apiUrl } from "../../apiConfig";
 
 interface MainMenuProps {
@@ -87,8 +87,8 @@ export const MainMenu = ({ value = 'recordings', handleChangeContent }: MainMenu
         </Tabs>
         <hr />
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
-          <Button href={`${apiUrl}/api-docs/`} target="_blank" rel="noopener noreferrer" sx={buttonStyles} startIcon={<Article />}>
-            API Docs
+          <Button href={`${apiUrl}/api-docs/`} target="_blank" rel="noopener noreferrer" sx={buttonStyles} startIcon={<Code />}>
+            Website To API
           </Button>
           <Button href="https://forms.gle/hXjgqDvkEhPcaBW76" target="_blank" rel="noopener noreferrer" sx={buttonStyles} startIcon={<CloudQueue />}>
             Join Maxun Cloud
@@ -103,7 +103,7 @@ const buttonStyles = {
   justifyContent: 'flex-start',
   textAlign: 'left',
   fontSize: 'medium',
-  padding: '6px 16px 6px 22px', 
+  padding: '6px 16px 6px 22px',
   minHeight: '48px',
   minWidth: '100%',
   display: 'flex',

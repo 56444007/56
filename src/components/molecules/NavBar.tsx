@@ -3,7 +3,7 @@ import axios from 'axios';
 import styled from "styled-components";
 import { stopRecording } from "../../api/recording";
 import { useGlobalInfoStore } from "../../context/globalInfo";
-import { IconButton, Menu, MenuItem, Typography, Avatar } from "@mui/material";
+import { IconButton, Menu, MenuItem, Typography, Avatar, Chip, } from "@mui/material";
 import { AccountCircle, Logout, Clear } from "@mui/icons-material";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
@@ -58,6 +58,7 @@ export const NavBar: React.FC<NavBarProps> = ({ recordingName, isRecording }) =>
       }}>
         <img src={MaxunLogo} width={45} height={40} style={{ borderRadius: '5px', margin: '5px 0px 5px 15px' }} />
         <div style={{ padding: '11px' }}><ProjectName>Maxun</ProjectName></div>
+        <Chip label="beta" color="primary" variant="outlined" sx={{ marginTop: '10px' }} />
       </div>
       {
         user ? (
@@ -65,21 +66,21 @@ export const NavBar: React.FC<NavBarProps> = ({ recordingName, isRecording }) =>
             {!isRecording ? (
               <>
                 <IconButton
-                component="a"
-                href="https://discord.gg/NFhWDCdb"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  borderRadius: '5px',
-                  padding: '8px',
-                  marginRight: '10px',
-                }}
+                  component="a"
+                  href="https://discord.gg/5GbPjBUkws"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderRadius: '5px',
+                    padding: '8px',
+                    marginRight: '30px',
+                  }}
                 >
-                <DiscordIcon sx={{ marginRight: '5px' }} />
+                  <DiscordIcon sx={{ marginRight: '5px' }} />
                 </IconButton>
-              <iframe src="https://ghbtns.com/github-btn.html?user=getmaxun&repo=maxun&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user=getmaxun&repo=maxun&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
                 <IconButton onClick={handleMenuOpen} sx={{
                   display: 'flex',
                   alignItems: 'center',
